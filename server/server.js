@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 
 app.post('/newUser', brain.addUser)
 app.post('/login', brain.login)
+app.get('/searchMessages', brain.search)
 
 massive(process.env.CONNECTION).then(db=>{
     app.set('db', db);
